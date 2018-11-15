@@ -10,5 +10,7 @@ export const Mutation = gql`
     register(email: String!, password: String!): String
 
     createProduct(kind: ProductKind): IProduct @adminOnly
+    addVariation(upc: String!, variation: VariationInput!): VariableProduct
+      @adminOnly
   }
 `;

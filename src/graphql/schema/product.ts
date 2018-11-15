@@ -11,8 +11,8 @@ export const Product = gql`
   }
 
   enum ProductKind {
-    BASIC
-    VARIABLE
+    basic
+    variable
   }
   
 
@@ -21,8 +21,16 @@ export const Product = gql`
   }
 
   type VariableProduct implements IProduct {
-    variations: String!
+    variations: [Variation]
 
     ${ProdcutInterface}
+  }
+
+  type Variation {
+    size: String
+  }
+
+  input VariationInput {
+    size: String
   }
 `;

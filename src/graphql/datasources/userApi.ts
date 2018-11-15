@@ -57,10 +57,8 @@ export class UserAPI extends DataSource {
     try {
       const user = await User.findById(this.context.user.id);
       if (user && user.isAdmin) {
-        console.log("admin");
         return true;
       }
-      console.log("not admin");
       return false;
     } catch (err) {
       throw err;

@@ -3,11 +3,12 @@ import { getNextProductCode } from "../utils";
 
 export interface IProduct extends Document {
   upc: string;
+  kind: ProductKind;
 }
 
 export enum ProductKind {
-  BASIC = "BASIC",
-  VARIABLE = "VARIABLE"
+  BASIC = "basic",
+  VARIABLE = "variable"
 }
 
 interface IProductModel extends Model<IProduct> {}
